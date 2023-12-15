@@ -11,6 +11,7 @@ In the repository, there are two codes, which is edited through Jupyter notebook
 ### Development process
 In both coding scripts, the first half contains codes which creates a setup sequence that connects the MongoClient to the UK_food json. this is achieved through Anaconda which the library database contained the installed Pymongo and the mongoimport is shown below: <br/>
 **json -d uk_food -c establishments --drop --jsonArray establishments.json** <br/>
+
 ```
 
 from pymongo import MongoClient
@@ -38,16 +39,13 @@ With the known Business Type ID, the update command is used on the new restauran
  <br/>
 The remaining code removed all restaurant that have the LocalAuthorityName as **Dover** and edit the data type for the latitude and longitude from String to Decimals
 ```
-db.establishments.delete_many({'LocalAuthorityName':'Dover'})
-
-```
- <br/>
-```
+db.establishments.delete_many({'LocalAuthorityName':'Dover'}) <br/>
 
 db.establishments.update_many({},[{'$set':{'geocode.longitude':{'$toDouble': "$geocode.longitude"}}}]) <br/>
 db.establishments.update_many({},[{'$set':{'geocode.latitude':{'$toDouble': "$geocode.latitude"}}}])
 
 ```
+
 The second code script examines the database with query as filters to find specific restaurant, along with the command to display the first known document. The filtered results are converted into Panda DataFrame in order to display ten more restaurant in a more visual clear way rather through pretty print command.  Below is an example of one of the analysis prompt. <br/>
 This is the script with the query and field descriptions included: <br/>
 
