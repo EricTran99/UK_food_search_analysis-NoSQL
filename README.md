@@ -44,13 +44,13 @@ db.establishments.delete_many({'LocalAuthorityName':'Dover'})
  <br/>
 ```
 
-db.establishments.update_many({},[{'$set':{'geocode.longitude':{'$toDouble': "$geocode.longitude"}}}])
+db.establishments.update_many({},[{'$set':{'geocode.longitude':{'$toDouble': "$geocode.longitude"}}}]) <br/>
 db.establishments.update_many({},[{'$set':{'geocode.latitude':{'$toDouble': "$geocode.latitude"}}}])
 
 ```
- <br/>
 The second code script examines the database with query as filters to find specific restaurant, along with the command to display the first known document. The filtered results are converted into Panda DataFrame in order to display ten more restaurant in a more visual clear way rather through pretty print command.  Below is an example of one of the analysis prompt. <br/>
 This is the script with the query and field descriptions included: <br/>
+
 ```
 
 query = {'scores.Hygiene': 20}
