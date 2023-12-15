@@ -26,36 +26,8 @@ With the installed python library, a MongoClient can be created for the connecti
   <br/>
 In the setup script, the code adds an additional restaurant into the exisitng database. This was done by creating a dictionary for the new restaurant (the detail was given manually) which is inserted into the database and checked if it was succefully added. <br/>
 
-```
+![image](https://github.com/EricTran99/UK_food_search_analysis-NoSQL/assets/134130254/68bba5f5-b730-43ca-b802-18981060fc30)
 
-new_restaurant = {"BusinessName":"Penang Flavours",
-    "BusinessType":"Restaurant/Cafe/Canteen",
-    "BusinessTypeID":"",
-    "AddressLine1":"Penang Flavours",
-    "AddressLine2":"146A Plumstead Rd",
-    "AddressLine3":"London",
-    "AddressLine4":"",
-    "PostCode":"SE18 7DY",
-    "Phone":"",
-    "LocalAuthorityCode":"511",
-    "LocalAuthorityName":"Greenwich",
-    "LocalAuthorityWebSite":"http://www.royalgreenwich.gov.uk",
-    "LocalAuthorityEmailAddress":"health@royalgreenwich.gov.uk",
-    "scores":{
-        "Hygiene":"",
-        "Structural":"",
-        "ConfidenceInManagement":""
-    },
-    "SchemeType":"FHRS",
-    "geocode":{
-        "longitude":"0.08384000",
-        "latitude":"51.49014200"
-    },
-    "RightToReply":"",
-    "Distance":4623.9723280747176,
-    "NewRatingPending":True}
-
-```
 ![image](https://github.com/EricTran99/UK_food_search_analysis-NoSQL/assets/134130254/7e351dbd-ce10-47b9-bcc7-b2eceb52edab)
  <br/>
 while the new restaurant detail has been added, it's still missing important information. One missing detail is the **Business Type ID**. By using the find command, the ID can be found among the established restaurant as the type ID will be identical. This code is shown below along with the result: <br/>
